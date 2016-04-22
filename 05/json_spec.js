@@ -85,7 +85,7 @@ describe('ANCESTRY', function () {
         return set.indexOf(person.name) > -1;
       }
 
-      expect(ancestry.filter(function (person) {
+    expect(ancestry.filter(function (person) {
         return isInSet(theSet, person);
       }).length).to.equal(2);
       expect(ancestry.filter(isInSet.bind(null, theSet)).length).to.equal(2);

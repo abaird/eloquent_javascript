@@ -24,6 +24,14 @@ function reduce(array, combine, start) {
   return current;
 }
 
+var ANCESTRY_FILE = require('./ancestry.js');
+var ancestry = JSON.parse(ANCESTRY_FILE);
+
+var byName = {};
+ancestry.forEach(function (person) {
+  byName[person.name] = person;
+});
+
 function average(array) {
   function plus(a, b) {
     return a + b;
@@ -44,6 +52,21 @@ function female(p) {
   return p.sex == 'f';
 }
 
+function mothers_age_at_childbirth(p) {
+  return p.born - byName[p.mother].born;
+}
+
+function valid_mother(p, _index, list) {
+  return p.mother !== null && exists(list, p.mother);
+}
+
+function exists(people, person) {
+  var match = people.filter(function (p) {
+    return p.name === person;
+  });
+  return match.length > 0
+}
+
 module.exports = {
   filter: filter,
   map: map,
@@ -51,6 +74,10 @@ module.exports = {
   average: average,
   age: age,
   male: male,
-  female: female
+  female: female,
+  valid_mother: valid_mother,
+  exists: exists,
+  mothers_age_at_childbirth: mothers_age_at_childbirth,
+  ancestry: ancestry
 };
 
