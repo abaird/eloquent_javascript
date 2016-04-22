@@ -9,12 +9,12 @@ function addEntry(events, didITurnIntoASquirrel) {
   });
 }
 
-addEntry(["work", "touched tree", "pizza", "running",
-  "television"], false);
-addEntry(["work", "ice cream", "cauliflower", "lasagna",
-  "touched tree", "brushed teeth"], false);
-addEntry(["weekend", "cycling", "break", "peanuts",
-  "beer"], true);
+addEntry(['work', 'touched tree', 'pizza', 'running',
+  'television'], false);
+addEntry(['work', 'ice cream', 'cauliflower', 'lasagna',
+  'touched tree', 'brushed teeth'], false);
+addEntry(['weekend', 'cycling', 'break', 'peanuts',
+  'beer'], true);
 
 console.log(journal);
 //console.log(JOURNAL);
@@ -44,20 +44,20 @@ function tableFor(event, journal) {
   return table
 }
 
-console.log(tableFor("pizza", JOURNAL));
-console.log(phi(tableFor("pizza", JOURNAL)));
-console.log(phi(tableFor("peanuts", JOURNAL)));
+console.log(tableFor('pizza', JOURNAL));
+console.log(phi(tableFor('pizza', JOURNAL)));
+console.log(phi(tableFor('peanuts', JOURNAL)));
 
-console.log("******************************");
+console.log('******************************');
 var map = {};
 function storePhi(event, phi) {
   map[event] = phi;
 }
 
-storePhi("pizza", 0.069);
-storePhi("touched tree", -0.081);
-console.log("pizza" in map);
-console.log(map["touched tree"]);
+storePhi('pizza', 0.069);
+storePhi('touched tree', -0.081);
+console.log('pizza' in map);
+console.log(map['touched tree']);
 console.log(map);
 
 for (var foo in map) {
@@ -65,7 +65,7 @@ for (var foo in map) {
     "' is " + map[foo]);
 }
 
-console.log("*******************************");
+console.log('*******************************');
 
 function gatherCorrelations(journal) {
   var phis = {};
@@ -84,16 +84,16 @@ var correlations = gatherCorrelations(JOURNAL);
 console.log(correlations.pizza);
 
 for (var foo in correlations) {
-  console.log(foo + "\t\t\t\t: " + correlations[foo]);
+  console.log(foo + '\t\t\t\t: ' + correlations[foo]);
 }
 
-console.log("**********************************");
-console.log("filtering out non-correlated events");
+console.log('**********************************');
+console.log('filtering out non-correlated events');
 for (var event in correlations) {
   if (correlations[event] <= 0.1 && correlations[event] >= -0.1) {
     //skip
   } else {
-    console.log(event + "\t\t\t\t: " + correlations[event]);
+    console.log(event + '\t\t\t\t: ' + correlations[event]);
   }
 }
 
@@ -101,8 +101,8 @@ for (var event in correlations) {
 // not brushed teeth are present
 for (var i = 0; i < JOURNAL.length; i++) {
   var entry = JOURNAL[i];
-  if (hasEvent("peanuts", entry) && !hasEvent("brushed teeth", entry)) {
-    entry.events.push("peanut teeth");
+  if (hasEvent('peanuts', entry) && !hasEvent('brushed teeth', entry)) {
+    entry.events.push('peanut teeth');
   }
 }
-console.log(phi(tableFor("peanut teeth", JOURNAL)));
+console.log(phi(tableFor('peanut teeth', JOURNAL)));
