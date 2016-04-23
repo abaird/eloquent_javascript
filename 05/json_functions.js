@@ -28,7 +28,7 @@ var ANCESTRY_FILE = require('./ancestry.js');
 var ancestry = JSON.parse(ANCESTRY_FILE);
 
 var byName = {};
-ancestry.forEach(function (person) {
+ancestry.forEach(function(person) {
   byName[person.name] = person;
 });
 
@@ -61,7 +61,7 @@ function valid_mother(p, _index, list) {
 }
 
 function exists(people, person) {
-  var match = people.filter(function (p) {
+  var match = people.filter(function(p) {
     return p.name === person;
   });
   return match.length > 0
@@ -80,7 +80,7 @@ function age_and_century(p) {
 
 function group_by(ary, attr) {
   var grouped = {};
-  ary.forEach(function (n) {
+  ary.forEach(function(n) {
     if (grouped[n[attr]] === undefined) {
       grouped[n[attr]] = [n];
     } else {
