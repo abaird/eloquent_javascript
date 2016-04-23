@@ -67,6 +67,29 @@ function exists(people, person) {
   return match.length > 0
 }
 
+function century(p) {
+  return p.died / 100;
+}
+
+function age_and_century(p) {
+  var obj = {};
+  obj.age = age(p);
+  obj.century = Math.ceil(century(p));
+  return obj;
+}
+
+function group_by(ary, attr) {
+  var grouped = {};
+  ary.forEach(function (n) {
+    if (grouped[n[attr]] === undefined) {
+      grouped[n[attr]] = [n];
+    } else {
+      grouped[n[attr]].push(n);
+    }
+  });
+  return grouped;
+}
+
 module.exports = {
   filter: filter,
   map: map,
@@ -78,6 +101,8 @@ module.exports = {
   valid_mother: valid_mother,
   exists: exists,
   mothers_age_at_childbirth: mothers_age_at_childbirth,
-  ancestry: ancestry
+  ancestry: ancestry,
+  age_and_century: age_and_century,
+  group_by: group_by
 };
 

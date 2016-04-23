@@ -8,8 +8,7 @@ var add = function(a, b) {
   return a + b;
 };
 
-//INVOCATION
-
+console.log('**************** Invocation *****************');
 // 4 different ways of invoking functions:
 //METHOD INVOCATION
 
@@ -66,7 +65,7 @@ var statusObject = {
 var status = Quo.prototype.get_status.apply(statusObject);
 console.log(status);
 
-//Exceptions
+console.log('**************** Exceptions *****************');
 var try_it = function() {
   try {
     add('seven');
