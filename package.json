@@ -1,0 +1,29 @@
+{
+  "name": "eloquent_javascript",
+  "version": "1.0.0",
+  "description": "where I learn javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abaird/eloquent_javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "\"eloquent",
+    "javascript\""
+  ],
+  "author": "Alan Baird",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abaird/eloquent_javascript/issues"
+  },
+  "homepage": "https://github.com/abaird/eloquent_javascript#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.8.0",
+    "mocha": "^2.4.5"
+  }
+}
