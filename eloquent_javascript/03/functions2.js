@@ -1,16 +1,16 @@
-var landscape = function () {
-    var result = "";
-    var flat = function (size) {
+var landscape = function() {
+    var result = '';
+    var flat = function(size) {
         for (var count = 0; count < size; count++) {
-            result += "_";
+            result += '_';
         }
     };
-    var mountain = function (size) {
-        result += "/";
+    var mountain = function(size) {
+        result += '/';
         for (var count = 0; count < size; count++) {
             result += "'";
         }
-        result += "\\";
+        result += '\\';
     };
 
     flat(3);
@@ -22,10 +22,10 @@ var landscape = function () {
 
 console.log(landscape());
 
-console.log("The future says: ", future());
+console.log('The future says: ', future());
 
 function future() {
-    return "We STILL have no flying cards.";
+    return 'We STILL have no flying cards.';
 }
 
 function power(base, exponent) {
@@ -44,7 +44,7 @@ console.log(power(4, 3));
 // closures
 function wrapValue(n) {
     var localVariable = n;
-    return function () {
+    return function() {
         return localVariable;
     };
 }
@@ -57,7 +57,7 @@ console.log(wrap2());
 
 // multiplier
 function multiplier(factor) {
-    return function (number) {
+    return function(number) {
         return number * factor;
     };
 }

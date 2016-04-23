@@ -1,8 +1,8 @@
 var func1 = function print1() {
-    console.log("hello")
+    console.log('hello')
 };
 var func2 = function print2() {
-    console.log(" there")
+    console.log(' there')
 };
 
 function printstuff(one, two) {

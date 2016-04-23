@@ -5,14 +5,14 @@
 function countBs(string) {
   var count = 0;
   for (var x = 0; x < string.length; x++) {
-    if (string.charAt(x) == "B") {
+    if (string.charAt(x) == 'B') {
       count++;
     }
   }
   return count;
 }
 
-console.log(countBs("BB"));
+console.log(countBs('BB'));
 
 function countChar(string, char) {
   var count = 0;
@@ -23,5 +23,5 @@ function countChar(string, char) {
   }
   return count;
 }
-console.log(countChar("kaKkerlak", "k"));
-console.log(countChar("frufru", "a"));
+console.log(countChar('kaKkerlak', 'k'));
+console.log(countChar('frufru', 'a'));
