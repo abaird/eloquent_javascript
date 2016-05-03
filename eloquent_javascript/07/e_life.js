@@ -20,7 +20,9 @@ var View = require('./view');
 var Wall = require('./wall');
 var LifelikeWorld = require('./lifelikeWorld');
 var Plant = require('./plant');
-var PlantEater = require('./plant_eater');
+var PlantEater = require('./plant_eater')
+var SmartPlantEater = require('./smart_plant_eater');
+var Tiger = require('./tiger');
 
 
 var grid = new Grid(5, 5);
@@ -58,26 +60,58 @@ grid.set(new Vector(1, 1), 'X');
 //
 //
 //
-var valley = new LifelikeWorld(
-  ['############################',
-    '#####                 ######',
-    '##   ***                **##',
-    '#   *##**         **  O  *##',
-    '#    ***     O    ##**    *#',
-    '#       O         ##***    #',
-    '#                 ##**     #',
-    '#   O       #*             #',
-    '#*          #**       O    #',
-    '#***        ##**    O    **#',
-    '##****     ###***       *###',
-    '############################'],
+// var valley = new LifelikeWorld(
+//   ['############################',
+//     '#####                 ######',
+//     '##   ***                **##',
+//     '#   *##**         **  O  *##',
+//     '#    ***     O    ##**    *#',
+//     '#       O         ##***    #',
+//     '#                 ##**     #',
+//     '#   O       #*             #',
+//     '#*          #**       O    #',
+//     '#***        ##**    O    **#',
+//     '##****     ###***       *###',
+//     '############################'],
+//   {'#': Wall,
+//     'O': PlantEater,
+//     '*': Plant}
+// );
+//
+// //animateWorld(valley);
+// for (var i = 0; i < 50; i++) {
+//   valley.turn();
+//   console.log(valley.toString());
+//}
+
+
+var jungle = new LifelikeWorld(
+  ['####################################################',
+    '#                 ####         ****              ###',
+    '#   *  @  ##                 ########       OO    ##',
+    '#   *    ##        O O                 ****       *#',
+    '#       ##*                        ##########     *#',
+    '#      ##***  *         ****                     **#',
+    '#* **  #  *  ***      #########                  **#',
+    '#* **  #      *               #   *              **#',
+    '#     ##              #   O   #  ***          ######',
+    '#*            @       #       #   *        O  #    #',
+    '#*                    #  ######                 ** #',
+    '###          ****          ***                  ** #',
+    '#       O                        @         O       #',
+    '#   *     ##  ##  ##  ##               ###      *  #',
+    '#   **         #              *       #####  O     #',
+    '##  **  O   O  #  #    ***  ***        ###      ** #',
+    '###               #   *****                    ****#',
+    '####################################################'],
   {'#': Wall,
-    'O': PlantEater,
+    '@': Tiger,
+    'O': SmartPlantEater, // from previous exercise
     '*': Plant}
 );
 
-//animateWorld(valley);
+// animateWorld(jungle);
 for (var i = 0; i < 50; i++) {
-  valley.turn();
-  console.log(valley.toString());
+  jungle.turn();
+  console.log(jungle.toString());
 }
