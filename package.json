@@ -4,7 +4,7 @@
   "description": "where I learn javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start karma.conf.js eloquent_javascript/13/elements_by_tag_name_test.js --single-run"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,12 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^2.8.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-cli": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
     "mocha": "^2.4.5"
   }
 }
